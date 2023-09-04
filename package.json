@@ -13,13 +13,17 @@
     "@types/node": "20.5.7",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "@types/styled-components": "^5.1.26",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "get-youtube-id": "^1.0.1",
     "next": "13.4.19",
     "next-sanity": "^5.4.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-lite-youtube-embed": "^2.3.52",
     "sanity": "^3.16.1",
+    "sanity-plugin-media": "^2.2.2",
     "typescript": "5.2.2"
   }
 }

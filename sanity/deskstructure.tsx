@@ -1,6 +1,6 @@
 // ./deskStructure.js
 import React from 'react';
-import { CogIcon, IceCreamIcon, LemonIcon, HomeIcon } from '@sanity/icons';
+import { CogIcon, IceCreamIcon, LemonIcon, HomeIcon,CaseIcon,TagIcon } from '@sanity/icons';
 
 
 // Define broad types (these are approximations and might need adjustments)
@@ -21,6 +21,7 @@ interface Document {
 }
 
 interface Structure {
+  [x: string]: any;
   list(): List;
   listItem(): ListItem;
   document(): Document;
@@ -31,7 +32,7 @@ export const myStructure = (S: Structure) => {
   return S.list()
     .title('In Search Of')
     .items([
-      ...S.documentTypeListItems().reverse().filter(listItem => !['siteSettings', 'press', 'casting', 'home'].includes(listItem.getId())),
+      ...S.documentTypeListItems().reverse().filter(listItem => !['siteSettings', 'press', 'casting', 'home','commercial-casting','media.tag'].includes(listItem.getId())),
       // settings
       S.listItem()
         .title('Site Settings')
@@ -67,6 +68,17 @@ export const myStructure = (S: Structure) => {
           S.document()
             .schemaType('casting')
             .documentId('casting')
-        )
+        ),
+       // Commercial Casting
+      S.listItem()
+        .title('Commercial Casting')
+        .icon(CaseIcon) // Or whatever icon you prefer
+        .child(S.documentTypeList('commercial-casting')),
+            //media tag 
+    S.listItem()
+    .title('Media Tag')
+    .icon(TagIcon)
+    .child(S.documentTypeList('media.tag'))
     ]);
+
 };

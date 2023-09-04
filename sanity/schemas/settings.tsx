@@ -1,4 +1,4 @@
-
+import seo from './page-seo'
 
 export default {
     name: 'siteSettings',
@@ -50,7 +50,13 @@ export default {
                 fields: [{name: 'social_link',title: 'Social Link',type: 'url'},{name:'social_name', title:'Social Name',type:'string'}]
               }
         ]
+      },
+      {
+        name: 'page_seo',
+        type: 'seo',
+        title: 'SEO Tags'
       }
+
       
     ]
   }
