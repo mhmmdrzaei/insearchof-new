@@ -10,7 +10,7 @@ export default {
       },
       {
         title: 'Casting Layout',
-        name: 'press_posts',
+        name: 'casting_posts',
         type: 'array',
         of:[
             {

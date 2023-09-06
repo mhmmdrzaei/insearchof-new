@@ -27,7 +27,7 @@ export default {
 
       {
         title: 'Casting Images',
-        name: 'press_posts',
+        name: 'com_casting_img',
         type: 'array',
         of:[
             {
