@@ -5,22 +5,6 @@ export default {
     title: 'Site Settings',
     type: 'document',
     fields: [
-        {
-            title: 'Logo',
-            name: 'logo',
-            type: 'image',
-            options: {
-              hotspot: false // <-- Defaults to false
-            },
-            fields: [
-              {
-                name: 'alt_text',
-                type: 'string',
-                title: 'alt text',
-              }
-              
-            ]
-        },
       {
         name: 'title',
         title: 'Site Title',

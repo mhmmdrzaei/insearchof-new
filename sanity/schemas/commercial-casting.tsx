@@ -63,18 +63,11 @@ export default {
         title: 'Casting Video',
         name: 'casting_video',
         type: 'file',
-        fields: [
-          {
-            name: 'attribution',
-            type: 'string',
-            title: 'Attribution'
-          }
-        ]
       },
       {
         title: 'Casting Embed Video',
         name: 'casting_embed_video',
-        type: 'url'
+        type: 'text'
       }
 
       

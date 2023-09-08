@@ -9,6 +9,12 @@ export default {
         type: 'string'
       },
       {
+        name:'casting_contact',
+        title: 'Casting Contact Info',
+        type: 'array', 
+        of: [{type: 'block'}]
+      },
+      {
         title: 'Casting Layout',
         name: 'casting_posts',
         type: 'array',
