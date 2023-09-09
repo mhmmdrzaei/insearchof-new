@@ -1,6 +1,8 @@
 // ./deskStructure.js
 import React from 'react';
 import { CogIcon, IceCreamIcon, LemonIcon, HomeIcon,CaseIcon,TagIcon } from '@sanity/icons';
+import { ListBuilder, StructureBuilder } from 'sanity/desk';
+
 
 
 // Define broad types (these are approximations and might need adjustments)
@@ -28,11 +30,15 @@ interface Structure {
   documentTypeListItems(): { getId(): string }[];
 }
 
-export const myStructure = (S: Structure) => {
+export const myStructure: (S: StructureBuilder) => ListBuilder = (S) => {
   return S.list()
     .title('In Search Of')
     .items([
-      ...S.documentTypeListItems().reverse().filter(listItem => !['siteSettings', 'press', 'casting', 'home','commercial-casting','media.tag'].includes(listItem.getId())),
+      ...S.documentTypeListItems().reverse().filter(listItem => {
+        const id = listItem.getId();
+        if (!id) return true; // Keep the listItem if ID is undefined
+        return !['siteSettings', 'press', 'casting', 'home','commercial-casting','media.tag'].includes(id);
+    }),
       // settings
       S.listItem()
         .title('Site Settings')
