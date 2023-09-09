@@ -2,7 +2,7 @@ import Image from 'next/image';
 import {getComCastings} from '@/sanity/sanity.utils'
 import Link from 'next/link';
 
-export default async function Home() {
+export default async function ComCasting() {
   const castings = await getComCastings();
 
   return (

@@ -5,6 +5,7 @@ import { Settings } from "./types/Settings";
 import {Casting} from './types/Casting'
 import { Home } from "./types/Home";
 import { CastingPub } from "./types/CastingPub";
+import { Press } from "./types/Press";
 
 
 
@@ -86,7 +87,6 @@ export async function getsettings(): Promise<Settings[]> {
 
 
   // casting page 
-    // home page 
     export async function getCasting(): Promise<CastingPub[]> {
       return createClient(clientConfig).fetch(
         groq`*[_type == "casting"]{
@@ -108,3 +108,18 @@ export async function getsettings(): Promise<Settings[]> {
     }
 
   // press
+  export async function getPress(): Promise<Press[]> {
+    return createClient(clientConfig).fetch(
+      groq`*[_type == "press"]{
+        _id,
+        title,      
+  "pressItems":   press_posts[]{
+            _key,
+            press_hed,
+          press_link
+          
+          }
+          
+    }`
+    )
+  }

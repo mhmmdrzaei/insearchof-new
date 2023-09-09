@@ -1,28 +1,23 @@
 import Image from 'next/image';
-import {getsettings} from '@/sanity/sanity.utils'
-import {getComCastings} from '@/sanity/sanity.utils'
-import Link from 'next/link';
+import {getHome} from '@/sanity/sanity.utils'
 
 export default async function Home() {
-  const settings = await getsettings();
-  const castings = await getComCastings();
+  const home = await getHome();
+
 
   return (
-    <div> 
-            {settings.map((setting) => ( 
-              <h1>{setting.title}</h1>
+    <section className='homePageContent'> 
 
-            ))}
-             {castings.map((project) => ( 
-              <Link href={`/commercial/${project.slug}`} key={project._id}>
-              <h1>{project.title}</h1>
-              </Link>
-              
 
-            ))}
+      {home.map((homePage)=> {
+        return homePage.images_url.map((homeImage: { url: string;_key: string;})=>{
+          return <Image src={homeImage.url} width={700} height={700} key={homeImage._key} className="homeImg" alt={''} />
+          
+        })
+    })}
 
     
     
-    </div>
+    </section>
   )
 }

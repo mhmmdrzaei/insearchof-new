@@ -1,6 +1,7 @@
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Header from '@/app/(site)/components/header/header.component'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,7 +21,7 @@ export default  function  RootLayout({
   return (
     <html lang="en">
         <body className={inter.className}>
-        <header>In Search of</header>
+        <Header/>
         <main>{children}</main>
         </body>
       

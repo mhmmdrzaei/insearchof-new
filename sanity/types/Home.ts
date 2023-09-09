@@ -3,7 +3,8 @@ import { PortableTextBlock } from "sanity"
 export type Home = {
   _id: string,
   title: string,
-  home_images: {
+  images_url: {
+    map(arg0: (homeImage: { url: string; _key: string; }) => string): any;
     url: string, 
     _key: string,
 
