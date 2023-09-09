@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { PortableText } from "@portabletext/react";
 import { UrlObject } from 'url';
 import Press from '../press/press.component';
+import { v4 as uuidv4 } from 'uuid';
+
+
 export default async function Header() {
 
     const settings = await getsettings();
@@ -10,10 +13,10 @@ export default async function Header() {
     return (
         <>
              {settings.map((setting) => ( 
-                <header>
+                <header key={uuidv4()} >
                     <section className='headingInfo'>
 
-                    <Link href={"/"}>
+                    <Link href={"/"} key={uuidv4()} >
                         <h1>{setting.title}</h1>
                     </Link>
                     <section className='headingDesc'>
@@ -21,11 +24,11 @@ export default async function Header() {
                         
                     </section>
                     <section className="headingMenu">
-                        <Link href={"/casting"}>
+                        <Link href={"/casting"} key={uuidv4()} >
                             Casting
                         </Link>
-                        <button className='pressButton'>Press</button>
-                        <button className='missionButton'>Mission</button>
+                        <button className='pressButton' key={uuidv4()} >Press</button>
+                        <button className='missionButton' key={uuidv4()} >Mission</button>
                         {
                             setting.social.map((social: {
                                 social_name: string; _key: string;
@@ -39,11 +42,11 @@ export default async function Header() {
                     </section>
 
                     </section>
-                    <section className='mission'>
-                    <PortableText value={setting.mission} />
+                    <section className='mission' >
+                    <PortableText value={setting.mission} key={uuidv4()}  />
                     </section>
                     <section>
-                        <Press/>
+                        <Press key={uuidv4()}  />
                     </section>
                 </header>
             

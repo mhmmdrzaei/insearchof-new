@@ -1,6 +1,7 @@
 import { PortableTextBlock } from "sanity"
 
 export type CastingPub = {
+  casting: any;
   _id: string,
   title: string,
   casting_posts: {

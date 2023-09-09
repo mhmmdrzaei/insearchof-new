@@ -25,6 +25,7 @@
     "react-lite-youtube-embed": "^2.3.52",
     "sanity": "^3.16.1",
     "sanity-plugin-media": "^2.2.2",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "uuid": "^9.0.0"
   }
 }
