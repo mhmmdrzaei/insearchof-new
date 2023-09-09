@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import {getHome} from '@/sanity/sanity.utils'
+import { UrlObject } from 'url';
+import { v4 as uuidv4 } from 'uuid';
 
 export default async function Home() {
   const home = await getHome();
@@ -10,11 +12,12 @@ export default async function Home() {
 
 
       {home.map((homePage)=> {
-        return homePage.images_url.map((homeImage: { url: string;_key: string;})=>{
-          return <Image src={homeImage.url} width={700} height={700} key={homeImage._key} className="homeImg" alt={''} />
+        return homePage.images_url.map((homeImage: { url: string; })=>{
+          return <Image src={homeImage.url} width={700} height={700} key={uuidv4()} className="homeImg" alt={''} />
           
         })
     })}
+
 
     
     

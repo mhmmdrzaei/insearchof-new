@@ -10,7 +10,7 @@ export default async function Press() {
 
         <>
         {press.map((pressPost)=> {
-            return pressPost.pressItems.map((singlePress: { press_link: string | UrlObject; press_hed: string;})=>{
+            return pressPost.pressItems.map((singlePress: { press_link: string | UrlObject; _key:string; press_hed: string;})=>{
                 return <Link href={singlePress.press_link} key={singlePress._key} target='_blank'>{singlePress.press_hed}</Link>
             })
         })}
