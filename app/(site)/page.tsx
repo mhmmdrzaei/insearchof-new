@@ -12,8 +12,8 @@ export default async function Home() {
 
 
       {home.map((homePage)=> {
-        return homePage.images_url.map((homeImage: { url: string; })=>{
-          return <Image src={homeImage.url} width={700} height={700} key={uuidv4()} className="homeImg" alt={''} />
+        return homePage.images_url.map((homeImage: { homeImgUrl: string; })=>{
+          return <Image src={homeImage.homeImgUrl} width={700} height={700} key={uuidv4()} className="homeImg" alt={''} />
           
         })
     })}

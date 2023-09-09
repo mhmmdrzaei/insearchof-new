@@ -78,7 +78,7 @@ export async function getsettings(): Promise<Settings[]> {
         _id,
         title,
         "images_url":   home_images[]{
-          "url":asset->url,
+          "homeImgUrl":asset->url,
           _key,
           }
     }`

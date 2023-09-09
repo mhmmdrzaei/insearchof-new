@@ -1,10 +1,11 @@
-import { PortableTextBlock } from "sanity"
+
 
 export type Home = {
   _id: string,
   title: string,
   images_url: {
-    url: string, 
+    map(arg0: (homeImage: { homeImgUrl: string; }) => import("react").JSX.Element): any;
+    homeImgUrl: string, 
     _key: string,
 
   },
