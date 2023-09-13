@@ -4,7 +4,7 @@ import {deskTool} from 'sanity/desk';
 import {schemaTypes} from './sanity/schemas'
 import { myStructure } from "./sanity/deskstructure";
 import {visionTool} from '@sanity/vision';
-import {media, mediaAssetSource} from 'sanity-plugin-media'
+import {media} from 'sanity-plugin-media'
 
 
 
