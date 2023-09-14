@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
   try {
     const { isValidSignature, body } = await parseBody<{ _type: string }>(
       req,
-      process.env.SANITY_WEBHOOK_SECRET
+      process.env.SANITY_WEBHOOK_SECRET 
     );
 
     if (!isValidSignature) {
