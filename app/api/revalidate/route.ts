@@ -1,6 +1,7 @@
 import { revalidateTag } from 'next/cache';
 import { type NextRequest, NextResponse } from 'next/server';
 import { parseBody } from 'next-sanity/webhook';
+import axios from 'axios';
 
 export async function POST(req: NextRequest) {
   try {
@@ -23,10 +24,22 @@ export async function POST(req: NextRequest) {
       return new Response(JSON.stringify({ message, body }), { status: 400 });
     }
 
-    // If the `_type` is `page`, then all `client.fetch` calls with
-    // `{next: {tags: ['page']}}` will be revalidated
-    await revalidateTag(body._type);
+    // Array of types to revalidate
+    const validTypes = ['siteSettings', 'commercial-casting', 'home', 'casting','press'];
 
+    // If the `_type` is within the validTypes array, trigger the revalidation
+    if (validTypes.includes(body._type)) {
+      await revalidateTag(body._type);
+  
+      // Trigger a redeploy
+      try {
+        await axios.post('https://api.vercel.com/v1/integrations/deploy/prj_I9EjBU6mDdDMHp78ibWka9iTF3wh/coK6sVflWZ');
+        console.log('Redeploy triggered');
+      } catch (err) {
+        console.error('Error triggering redeploy:');
+      }
+    }
+  
     return NextResponse.json({ body });
   } catch (err) {
     console.error(err);
@@ -35,3 +48,5 @@ export async function POST(req: NextRequest) {
     return new Response(errMsg, { status: 500 });
   }
 }
+
+

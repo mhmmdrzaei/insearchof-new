@@ -16,6 +16,7 @@ export type Settings = {
   seoDescription: string,
   seoImageUrl: string,
   twitterSeoImageUrl: string,
+    cache: string
 
 
 

@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default async function Header() {
 
-    const settings = await getsettings();
+    const settings = await getsettings()
 
     return (
         <>
@@ -59,3 +59,5 @@ export default async function Header() {
 
     
 }
+
+

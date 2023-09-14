@@ -11,7 +11,7 @@ import { Press } from "./types/Press";
 
 export async function getsettings(): Promise<Settings[]> {
     return createClient(clientConfig).fetch(
-      groq`*[_type == "siteSettings"]{
+      `*[_type == "siteSettings"]{
         _id,
        description,
        mission,
@@ -27,7 +27,11 @@ export async function getsettings(): Promise<Settings[]> {
       "twitterSeoImageUrl": page_seo.seo_image_twitter.asset->url
        
        
- }`
+ }`,       {next: {
+  revalidate: 20
+}
+  
+}
     )
   }
 
@@ -47,7 +51,12 @@ export async function getsettings(): Promise<Settings[]> {
         casting_embed_video
         
         
-    }`
+    }`,
+    {next: {
+      revalidate: 20
+    }
+      
+    }
     )
   }
   export async function getComCasting( slug: string): Promise<Casting>{
@@ -67,7 +76,13 @@ export async function getsettings(): Promise<Settings[]> {
         
         
     }`,
-    {slug}
+    {slug,   
+      next: {
+        revalidate: 20
+      }
+        
+      
+    }
     )
   }
 
@@ -81,7 +96,12 @@ export async function getsettings(): Promise<Settings[]> {
           "homeImgUrl":asset->url,
           _key,
           }
-    }`
+    }`,
+    {next: {
+      revalidate: 20
+    }
+      
+    }
     )
   }
 
@@ -103,7 +123,12 @@ export async function getsettings(): Promise<Settings[]> {
             width,
             }
             
-      }`
+      }`,
+      {next: {
+        revalidate: 20
+      }
+        
+      }
       )
     }
 
@@ -120,6 +145,11 @@ export async function getsettings(): Promise<Settings[]> {
           
           }
           
-    }`
+    }`,
+    {next: {
+      revalidate: 20
+    }
+      
+    }
     )
   }
