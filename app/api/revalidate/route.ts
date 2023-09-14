@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
         } catch (err) {
             console.error('Error triggering redeploy:');
         }
-    }, 10000); // Delay for 10 seconds
+    }, 35000); // Delay for 35 seconds
   
     
     }
