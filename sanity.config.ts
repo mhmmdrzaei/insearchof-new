@@ -12,6 +12,7 @@ const config =  defineConfig({
       projectId: '5zyxoqnf',
       dataset: 'production',
       title: 'In Search Of',
+      useCdn: false,
       apiVersion: '2023-08-31',
       basePath:'/admin',
       plugins: [deskTool({structure: myStructure,}), visionTool(),media()],
