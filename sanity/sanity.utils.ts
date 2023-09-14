@@ -27,9 +27,8 @@ export async function getsettings(): Promise<Settings[]> {
       "twitterSeoImageUrl": page_seo.seo_image_twitter.asset->url
        
        
- }`,       {next: {
-  revalidate: 20
-}
+ }`,       {
+  cache: 'no-store'
   
 }
     )
@@ -52,9 +51,8 @@ export async function getsettings(): Promise<Settings[]> {
         
         
     }`,
-    {next: {
-      revalidate: 20
-    }
+    {
+      cache: 'no-store'
       
     }
     )
@@ -77,9 +75,8 @@ export async function getsettings(): Promise<Settings[]> {
         
     }`,
     {slug,   
-      next: {
-        revalidate: 20
-      }
+     cache: 'no-store'
+        
         
       
     }
@@ -97,9 +94,8 @@ export async function getsettings(): Promise<Settings[]> {
           _key,
           }
     }`,
-    {next: {
-      revalidate: 20
-    }
+    {
+      cache: 'no-store'
       
     }
     )
@@ -124,9 +120,8 @@ export async function getsettings(): Promise<Settings[]> {
             }
             
       }`,
-      {next: {
-        revalidate: 20
-      }
+      {
+        cache: 'no-store'
         
       }
       )
@@ -146,9 +141,8 @@ export async function getsettings(): Promise<Settings[]> {
           }
           
     }`,
-    {next: {
-      revalidate: 20
-    }
+    {
+      cache: 'no-store'
       
     }
     )
