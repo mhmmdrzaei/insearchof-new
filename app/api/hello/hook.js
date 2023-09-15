@@ -1,5 +1,5 @@
 import {isValidSignature, SIGNATURE_HEADER_NAME} from '@sanity/webhook'
-
+export const dynamic = 'force-dynamic';
 
 const secret = process.env.SANITY_WEBHOOK_SECRET
 

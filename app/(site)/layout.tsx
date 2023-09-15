@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Header from '@/app/(site)/components/header/header.component'
 
+export const dynamic = 'auto'
 
 const inter = Inter({ subsets: ['latin'] })
 
