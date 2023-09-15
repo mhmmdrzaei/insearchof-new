@@ -32,14 +32,13 @@ export async function POST(req: NextRequest) {
     if (validTypes.includes(body._type)) {
       await revalidateTag(body._type);
 
-      setTimeout(async () => {
+  
         try {
             await axios.post('https://api.vercel.com/v1/integrations/deploy/prj_I9EjBU6mDdDMHp78ibWka9iTF3wh/coK6sVflWZ');
             console.log('Redeploy triggered');
         } catch (err) {
             console.error('Error triggering redeploy:');
         }
-    }, 35000); // Delay for 35 seconds 
   
     
     }
