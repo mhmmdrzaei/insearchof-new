@@ -4,7 +4,7 @@ import { PortableText } from "@portabletext/react";
 import { UrlObject } from 'url';
 import Press from '../press/press.component';
 import { v4 as uuidv4 } from 'uuid';
-export const dynamic = 'auto'
+export const dynamic = 'force-dynamic'
 
 export default async function Header() {
 

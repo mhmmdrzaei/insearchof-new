@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import {getCasting} from '@/sanity/sanity.utils'
 
-export const dynamic = 'auto'
+export const dynamic = 'force-dynamic'
 
 export default async function Casting() {
   const casting = await getCasting();

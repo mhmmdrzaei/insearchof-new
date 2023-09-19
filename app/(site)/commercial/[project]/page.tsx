@@ -1,6 +1,6 @@
 import { getComCasting } from "@/sanity/sanity.utils";
 import { PortableText } from "@portabletext/react";
-export const dynamic = 'auto'
+export const dynamic = 'force-dynamic'
 
 type Props = {
     params: {project: string}

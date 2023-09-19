@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import {getComCastings} from '@/sanity/sanity.utils'
 import Link from 'next/link';
-export const dynamic = 'auto'
+export const dynamic = 'force-dynamic'
 export default async function ComCasting() {
   const castings = await getComCastings();
 
