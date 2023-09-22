@@ -34,20 +34,12 @@ export async function getsettings(): Promise<Settings[]> {
     )
   }
 
-  export async function getComCastings(): Promise<Casting[]> {
+  export async function getComCastingsAll(): Promise<Casting[]> {
     return createClient(clientConfig).fetch(
       groq`*[_type == "commercial-casting"]{
         _id,
         title,
         "slug": slug.current,
-        castingdescription,
-        com_casting_img[]{
-          "url":asset->url,
-          alt,
-          width
-        },
-        "castingVideo_url": casting_video.asset->url,
-        casting_embed_video
         
         
     }`,
@@ -64,7 +56,7 @@ export async function getsettings(): Promise<Settings[]> {
         title,
         "slug": slug.current,
         castingdescription,
-        com_casting_img[]{
+        "casting": com_casting_img[]{
           "url":asset->url,
           alt,
           width
@@ -114,6 +106,7 @@ export async function getsettings(): Promise<Settings[]> {
             
             "url":asset->url,
             _key,
+            _type,
             attribution,
             caption,
             width,

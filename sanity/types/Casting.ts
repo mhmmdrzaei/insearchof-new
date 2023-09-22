@@ -8,7 +8,8 @@ export type Casting = {
     _id: string
   },
   castingdescription: PortableTextBlock[],
-  com_casting_img: {
+  casting: {
+    map(arg0: (castItem: { _type: string; url: string; _key: string; attribution: string; caption: string; }) => import("react").JSX.Element | null): import("react").ReactNode;
     url: string,
     alt: string,
     width: string

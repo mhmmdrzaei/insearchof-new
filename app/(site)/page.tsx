@@ -1,14 +1,20 @@
 import Image from 'next/image';
-import {getHome} from '@/sanity/sanity.utils'
+import {getHome, getsettings} from '@/sanity/sanity.utils'
 import { UrlObject } from 'url';
 import { v4 as uuidv4 } from 'uuid';
-export const dynamic = 'auto'
+import Header from '@/app/(site)/components/header/header.component'
 export default async function Home() {
   const home = await getHome();
+  const settings = await getsettings()
 
 
   return (
-    <section className='homePageContent'> 
+    <>
+    <section className="pageSide">
+        <Header set={settings} />
+
+    </section>
+    <section className='pageMain'> 
 
 
       {home.map((homePage)=> {
@@ -22,5 +28,7 @@ export default async function Home() {
     
     
     </section>
+    </>
+    
   )
 }

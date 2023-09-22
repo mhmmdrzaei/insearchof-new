@@ -1,7 +1,6 @@
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Header from '@/app/(site)/components/header/header.component'
 
 export const dynamic = 'force-dynamic'
 
@@ -22,7 +21,6 @@ export default  function  RootLayout({
   return (
     <html lang="en">
         <body className={inter.className}>
-        <Header/>
         <main>{children}</main>
         </body>
       
