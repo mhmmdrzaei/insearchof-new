@@ -9,7 +9,7 @@ export type Casting = {
   },
   castingdescription: PortableTextBlock[],
   casting: {
-    map(arg0: (castItem: { _type: string; url: string; _key: string; attribution: string; caption: string; }) => import("react").JSX.Element | null): import("react").ReactNode;
+    map(arg0: (castItem: { _type: string; url: string; _key: string; attribution: string; caption: string; width: string;}) => import("react").JSX.Element | null): import("react").ReactNode;
     url: string,
     alt: string,
     width: string

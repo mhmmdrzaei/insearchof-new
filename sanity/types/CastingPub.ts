@@ -1,8 +1,10 @@
 import { PortableTextBlock } from "sanity"
 
+
+
 export type CastingPub = {
   casting: {
-    map(arg0: (castItem: { _type: string; url: string; _key: string; attribution: string; caption: string; }) => import("react").JSX.Element | null): any;
+    map(arg0: (castItem: { _type: string; url: string; _key: string; attribution: string; caption: string;width:number }) => import("react").JSX.Element | null): any;
     url: string, 
     _key: string,
     attribution: string,

@@ -10,13 +10,13 @@ export default async function ComCasting() {
       <>
         <section className="pageSide">
         {settings.map((setting) => ( 
-                <header key={uuidv4()} >
+                <section className='headingInfo'>
 
-                    <Link href={"/"} key={uuidv4()} >
-                        <h1>{setting.title}</h1>
-                    </Link>
+                <Link href={"/"} key={uuidv4()} >
+                    <h1>{setting.title}</h1>
+                </Link>
 
-                </header>           
+            </section>            
           ))}
         </section>
         <section className="pageMain">

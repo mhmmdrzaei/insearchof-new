@@ -4,17 +4,26 @@ export const dynamic = 'force-dynamic'
 import Link from "next/link";
 import { v4 as uuidv4 } from 'uuid';
 import Image from "next/image";
+import {IMAGE_SIZE_COM} from "@/app/(site)/components/stylingComponent/stylingComponent.component"
+
 
 type Props = {
     params: {project: string}
 }
+
+function getSizeClassName(size?: string): string {
+    if (typeof size === 'undefined' || !IMAGE_SIZE_COM[size]) {
+        return "hundredWidth";
+    }
+    return IMAGE_SIZE_COM[size];
+}
+
 export default async function Casting({params}:Props) {
     const slug = params.project;
 
     const project = await getComCasting(slug)
     const allProjects = await getComCastingsAll();
     const settings = await getsettings()
-    console.log(project)
     if (!project) {
         return <div>Nothing Found...</div>;
     }
@@ -23,13 +32,13 @@ export default async function Casting({params}:Props) {
         <>
         <section className="pageSide">
         {settings.map((setting) => ( 
-                <header key={uuidv4()} >
+                <section className='headingInfo'>
 
                     <Link href={"/"} key={uuidv4()} >
                         <h1>{setting.title}</h1>
                     </Link>
 
-                </header>           
+                </section>         
           ))}
                 <div className="allProjectsList">
                 <h2>Commercial Casting Projects</h2>
@@ -45,16 +54,22 @@ export default async function Casting({params}:Props) {
 
             <h3>{project.title}</h3>
             <div><PortableText value={project.castingdescription} /></div>
-            {project?.casting_embed_video ? <div className="embedVideoCotnet">{project.casting_embed_video}</div> : null}
+            {project?.casting_embed_video ? 
+            <div className="embedVideoCotnet" dangerouslySetInnerHTML={{ __html: project.casting_embed_video }} />
+            : null}
             {project?.castingVideo_url ?
-            <video controls>
-            <source src={project.castingVideo_url} type="video/mp4" />
-            Your browser does not support the video tag.
-            </video> : null}
+            <div className="htmlVideoContainer">
+                <video controls>
+                <source src={project.castingVideo_url} type="video/mp4" />
+                Your browser does not support the video tag.
+                </video>
+
+            </div> : null}
             {project?.casting ?
-            project.casting.map((castItem: { _type: string, url: string, _key: string, attribution: string, caption: string }) => {
-                return <figure key={castItem._key}>
-                    <Image src={castItem.url} width={700} height={700} className="homeImg" alt={`${castItem.attribution} 
+            project.casting.map((castItem: {
+                width: string; _type: string, url: string, _key: string, attribution: string, caption: string }) => {
+                return <figure key={castItem._key} className={getSizeClassName(castItem.width)}>
+                    <Image src={castItem.url} width={900} height={900} className="homeImg" alt={`${castItem.attribution} 
                 `} loading="lazy" />
                 </figure>;
 
@@ -62,4 +77,4 @@ export default async function Casting({params}:Props) {
         </section>
         </>
     );
-}
+} 
