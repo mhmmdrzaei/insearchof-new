@@ -1,6 +1,7 @@
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import './index.scss'
 
 export const dynamic = 'force-dynamic'
 

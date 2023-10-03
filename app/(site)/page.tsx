@@ -10,11 +10,11 @@ export default async function Home() {
 
   return (
     <>
-    <section className="pageSide">
+    <section className="pageSide homepageSide">
         <Header set={settings} />
 
     </section>
-    <section className='pageMain'> 
+    <section className='pageMain homepage'> 
 
 
       {home.map((homePage)=> {

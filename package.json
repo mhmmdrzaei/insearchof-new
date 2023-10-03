@@ -27,6 +27,7 @@
     "react-lite-youtube-embed": "^2.3.52",
     "sanity": "^3.16.1",
     "sanity-plugin-media": "^2.2.2",
+    "sass": "^1.68.0",
     "server-only": "^0.0.1",
     "suspend-react": "^0.1.3",
     "typescript": "5.2.2",
