@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { v4 as uuidv4 } from 'uuid';
 import {getCasting, getsettings} from '@/sanity/sanity.utils'
 import Header from '@/app/(site)/components/header/header.component'
 import {IMAGE_SIZE_CASTING } from "@/app/(site)/components/stylingComponent/stylingComponent.component"
@@ -23,7 +24,7 @@ return (
         <Header set={settings} />
 
     </section>
-    <section className="pageMain">
+    <section className="pageMain" key={uuidv4()}>
     {casting.map((castingPage) => {
         
             return castingPage.casting.map((castItem: {
@@ -33,7 +34,7 @@ return (
 
                 if (castItem._type === 'casting_video') {
                     return (
-                        <div key={castItem._key} className={`videoCasting ${getSizeClassName(castItem.width)}`}>
+                        <div key={uuidv4()} className={`videoCasting ${getSizeClassName(castItem.width)}`}>
                             <video controls>
                                 <source src={castItem.url} type="video/mp4" />
                                 Your browser does not support the video tag.
@@ -43,7 +44,7 @@ return (
                     )
                 } else if (castItem._type === 'casting_image') {
                     return (
-                        <figure key={castItem._key} className={` ${getSizeClassName(castItem.width)}`}>
+                        <figure key={uuidv4()} className={` ${getSizeClassName(castItem.width)}`}>
                             <Image src={castItem.url} width={700} height={700} className="homeImg" alt={`${castItem.attribution} 
                             `} loading="lazy" />
                             {castItem?.caption ? <span>{castItem.caption}</span> : null}

@@ -31,19 +31,21 @@ export default async function Casting({params}:Props) {
     return (
         <>
         <section className="pageSide">
+        <section className='headingInfo' key={uuidv4()}>
         {settings.map((setting) => ( 
-                <section className='headingInfo'>
+                
 
                     <Link href={"/"} key={uuidv4()} >
                         <h1>{setting.title}</h1>
                     </Link>
 
-                </section>         
+                      
           ))}
+           </section>  
                 <div className="allProjectsList">
                 <h2>Commercial Casting Projects</h2>
                 {allProjects.map((proj) => (
-                <Link href={`/commercial/${proj.slug}`} key={proj._id}>
+                <Link href={`/commercial/${proj.slug}`} key={uuidv4()}>
                 <h1>{proj.title}</h1>
                 </Link>
                 ))}
@@ -68,7 +70,7 @@ export default async function Casting({params}:Props) {
             {project?.casting ?
             project.casting.map((castItem: {
                 width: string; _type: string, url: string, _key: string, attribution: string, caption: string }) => {
-                return <figure key={castItem._key} className={getSizeClassName(castItem.width)}>
+                return <figure key={uuidv4()} className={getSizeClassName(castItem.width)}>
                     <Image src={castItem.url} width={900} height={900} className="homeImg" alt={`${castItem.attribution} 
                 `} loading="lazy" />
                 </figure>;

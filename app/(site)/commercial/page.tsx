@@ -9,20 +9,22 @@ export default async function ComCasting() {
   return (
       <>
         <section className="pageSide">
+        <section className='headingInfo'>
         {settings.map((setting) => ( 
-                <section className='headingInfo'>
+                
 
                 <Link href={"/"} key={uuidv4()} >
                     <h1>{setting.title}</h1>
                 </Link>
 
-            </section>            
+                    
           ))}
+           </section>   
         </section>
         <section className="pageMain">
         <h2>Commercial Casting Projects</h2>
         {castings.map((project) => ( 
-              <Link href={`/commercial/${project.slug}`} key={project._id}>
+              <Link href={`/commercial/${project.slug}`} key={uuidv4()}>
               <h1>{project.title}</h1>
               </Link>
               
