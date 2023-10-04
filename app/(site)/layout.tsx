@@ -23,6 +23,7 @@ export default  function  RootLayout({
     <html lang="en">
         <body className={inter.className}>
         <main>{children}</main>
+        <footer><p>© In Search Of {new Date().getFullYear()}</p></footer>
         </body>
       
     </html>

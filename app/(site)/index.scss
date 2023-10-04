@@ -58,15 +58,25 @@ body {
     text-decoration: none;
     font-weight: 400;
     color: black;
+    word-wrap: break-word;
+
     &:hover {
         text-decoration: underline;
     }
   }
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4{
     font-family: akkuratnormal, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
   }
+}
+p strong  {
+    font-family: akkuratnormal, sans-serif;
+    font-weight: 700;
+}
+h1 {
+    @include fontSize(9);
+    margin-top: 5px;
 }
 
 
@@ -76,16 +86,99 @@ body {
   justify-content: space-between;
 }
 
-
-
+body {
+    padding:10px;
+}
 main {
+    min-height: calc(100vh - 20px)
+}
+
+main, .homepageContainer {
     @extend .flex;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+// footer 
+footer {
+
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+
+}
+
+// page side
+
+.pageSide {
+    width: 18%;
+    position: relative;
+}
+.mission {
+    display: none;
+    position: fixed;
+    left: calc(18% + 40px);
+    width: 18%;
+    padding-right: 20px;
+    border-right: 1px solid #dadbdd;
+    height: calc(100vh - 20px);
+    h1 {
+        margin-bottom: 50px;
+    }
+
+}
+.press {
+    display: none;
+}
+.headingInfo {
+    position: absolute;
+    height: calc(100vh - 20px);
+    padding-right: 10px;
+    border-right: 1px solid #dadbdd;
+}
+.headingMenu {
+    a, button {
+        display: block;
+        margin: 3px 0;
+    }
+
+}
+.headingDesc {
+    margin-bottom:50px;
+}
+.headingDesc p:nth-child(3) {
+    margin-top: 50px;
+    margin-bottom: 3px;
+}
+.headingDesc p:nth-child(4) {
+    margin-top: 0;
+}
+.homepageContainer {
+    .mission {
+        display: block;
+    }
+    .missionButton {
+        display: none;
+    }
+    .homepageSide {
+        @extend .flex;
+        .headingInfo{
+            width: 100%;
+        }
+    }
 }
 // home page 
 .homepage {
     display: grid;
     grid-template-columns: 24% 24% 24% 24%;
     padding: 10px;
+    width: calc(60% - 40px);
+    
+
     justify-content: space-between;
     img {
     

@@ -9,7 +9,7 @@ export default async function Home() {
 
 
   return (
-    <>
+    <section className='homepageContainer'>
     <section className="pageSide homepageSide">
         <Header set={settings} />
 
@@ -28,7 +28,7 @@ export default async function Home() {
     
     
     </section>
-    </>
+    </section>
     
   )
 }
