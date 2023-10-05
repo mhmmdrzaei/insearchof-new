@@ -20,6 +20,19 @@ type MenuProps = {
 export default function Menu({ social, mission, pressContent, title, description }: MenuProps) {
     const [activeMission, setActiveMission] = useState(false);
     const [activePress, setActivePress] = useState(false);
+    const handlePressClick = () => {
+        if (activeMission) {
+            setActiveMission(false);
+        }
+        setActivePress(prevState => !prevState);
+    };
+
+    const handleMissionClick = () => {
+        if (activePress) {
+            setActivePress(false);
+        }
+        setActiveMission(prevState => !prevState);
+    };
 
     return (
         <>
@@ -37,12 +50,12 @@ export default function Menu({ social, mission, pressContent, title, description
                 Casting
             </Link>
             <button className='pressButton'
-                onClick={() => setActivePress(prevState => !prevState)}
+               onClick={handlePressClick}
             >
                 Press
             </button>
             <button className='missionButton'
-                onClick={() => setActiveMission(prevState => !prevState)}
+                onClick={handleMissionClick}
             >
                 Mission
             </button>
@@ -57,13 +70,23 @@ export default function Menu({ social, mission, pressContent, title, description
             <section 
                 className={`mission ${activeMission ? 'activemission' : ''}`}
             >
+                <section className="missionInner">
                 <h1>Mission</h1>
+                <button  onClick={handleMissionClick}>← CLOSE</button>
                 <PortableText value={mission} />
+
+                </section>
+
             </section>
             <section 
                 className={`press ${activePress ? 'activepress' : ''}`}
             >
+                <section className="pressInner">
+                <button onClick={handlePressClick} >← CLOSE</button>
                 {pressContent}
+
+                </section>
+
             </section>
          </>
         
