@@ -42,6 +42,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+figure {
+    margin: 0;
+}
 
 body {
     background: rgb(247, 246, 240);
@@ -54,9 +57,9 @@ body {
   }
   @include fontSize(8);
   a, button {
-    font-family: akkurat-monoregular, sans-serif;
+    font-family: akkuratnormal, sans-serif;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 500;
     color: black;
     word-wrap: break-word;
 
@@ -77,6 +80,9 @@ p strong  {
 h1 {
     @include fontSize(11);
     margin-top: 5px;
+}
+h2 {
+    @include fontSize(9);
 }
 
 
@@ -214,6 +220,9 @@ footer {
 }
 .headingDesc {
     margin:50px 0;
+    p {
+        margin: 0;
+    }
 }
 .headingDesc p:nth-child(3) {
     margin-top: 50px;
@@ -343,5 +352,40 @@ footer {
     position: fixed;
     bottom: 2px;
     width: 18%;
+
+}
+// com casting 
+.comCastingPage {
+    width: 80%;
+    text-align: center;
+    a {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+.allProjectsList {
+    a {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .activeLink {
+        text-decoration:line-through;
+        pointer-events: none;
+   cursor: default;
+    }
+}
+.comCastingProj {
+    width: 79%;
+}
+.comCastingContent {
+    @extend .flex;
+    .fiftyWidth {
+        width: 49%;
+        margin-bottom: 10px;
+    }
+    .hundredWidth {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 
 }

@@ -41,21 +41,24 @@ export default async function Casting({params}:Props) {
 
                       
           ))}
-           </section>  
-                <div className="allProjectsList">
+
+            <div className="allProjectsList">
                 <h2>Commercial Casting Projects</h2>
                 {allProjects.map((proj) => (
-                <Link href={`/commercial/${proj.slug}`} key={uuidv4()}>
-                <h1>{proj.title}</h1>
+                <Link className={(slug && proj.slug && slug === proj.slug) ? 'activeLink' : ''} href={`/commercial/${proj.slug}`} key={uuidv4()}>
+                {proj.title}
                 </Link>
                 ))}
                 </div>
+           </section>  
+
 
         </section>
-        <section className="pageMain">
+        <section className="pageMain comCastingProj">
 
             <h3>{project.title}</h3>
             <div><PortableText value={project.castingdescription} /></div>
+            <section className="comCastingContent">
             {project?.casting_embed_video ? 
             <div className="embedVideoCotnet" dangerouslySetInnerHTML={{ __html: project.casting_embed_video }} />
             : null}
@@ -76,6 +79,9 @@ export default async function Casting({params}:Props) {
                 </figure>;
 
             }) : null}
+
+            </section>
+            
         </section>
         </>
     );

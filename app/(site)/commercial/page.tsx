@@ -21,11 +21,11 @@ export default async function ComCasting() {
           ))}
            </section>   
         </section>
-        <section className="pageMain">
+        <section className="pageMain comCastingPage">
         <h2>Commercial Casting Projects</h2>
         {castings.map((project) => ( 
               <Link href={`/commercial/${project.slug}`} key={uuidv4()}>
-              <h1>{project.title}</h1>
+              {project.title}
               </Link>
               
 

@@ -3,10 +3,7 @@ import { PortableTextBlock } from "sanity"
 export type Casting = {
   _id: string,
   title: string,
-  slug: {
-    current: string,
-    _id: string
-  },
+  slug: string,
   castingdescription: PortableTextBlock[],
   casting: {
     map(arg0: (castItem: { _type: string; url: string; _key: string; attribution: string; caption: string; width: string;}) => import("react").JSX.Element | null): import("react").ReactNode;
