@@ -1,7 +1,7 @@
 import {getComCastingsAll, getsettings} from '@/sanity/sanity.utils'
 import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
-export const dynamic = 'force-dynamic'
+
 
 export default async function ComCasting() {
   const castings = await getComCastingsAll();
@@ -23,8 +23,8 @@ export default async function ComCasting() {
         <section className="pageMain comCastingPage">
         <h2>Commercial Casting Projects</h2>
         {castings.map((project) => ( 
-          <span>
-              <Link href={`/commercial/${project.slug}`} key={uuidv4()}>
+          <span key={uuidv4()}>
+              <Link href={`/commercial/${project.slug}`} >
               {project.title}
               </Link> /</span>
               
