@@ -1,6 +1,7 @@
 import {getComCastingsAll, getsettings} from '@/sanity/sanity.utils'
 import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
+export const dynamic = 'force-dynamic'
 
 export default async function ComCasting() {
   const castings = await getComCastingsAll();
