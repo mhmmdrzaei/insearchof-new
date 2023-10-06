@@ -55,12 +55,18 @@ export default async function Casting({params}:Props) {
 
         </section>
         <section className="pageMain comCastingProj">
-
+            <div className="projDescription">
             <h3>{project.title}</h3>
             <div><PortableText value={project.castingdescription} /></div>
+
+            </div>
+
+           
             <section className="comCastingContent">
             {project?.casting_embed_video ? 
-            <div className="embedVideoCotnet" dangerouslySetInnerHTML={{ __html: project.casting_embed_video }} />
+            <div className="embeddedContainer">
+            <div className="embedVideoContent" dangerouslySetInnerHTML={{ __html: project.casting_embed_video }} />
+            </div>
             : null}
             {project?.castingVideo_url ?
             <div className="htmlVideoContainer">

@@ -8,8 +8,7 @@ export default async function ComCasting() {
 
   return (
       <>
-        <section className="pageSide">
-        <section className='headingInfo'>
+        <section className="ComCastingHead">
         {settings.map((setting) => ( 
                 
 
@@ -20,13 +19,13 @@ export default async function ComCasting() {
                     
           ))}
            </section>   
-        </section>
         <section className="pageMain comCastingPage">
         <h2>Commercial Casting Projects</h2>
         {castings.map((project) => ( 
+          <span>
               <Link href={`/commercial/${project.slug}`} key={uuidv4()}>
               {project.title}
-              </Link>
+              </Link> /</span>
               
 
             ))}
