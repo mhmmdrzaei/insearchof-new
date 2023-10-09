@@ -3,9 +3,19 @@ import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
 
 
+import dynamic from 'next/dynamic';
+
+const PasswordProtected = dynamic(
+  () => import('../components/passwordProtected/passwrodProtectd.client'),
+  { ssr: false }
+);
+
+
 export default async function ComCasting() {
   const castings = await getComCastingsAll();
   const settings = await getsettings()
+  const password = settings[0].password;
+
 
   return (
       <>
@@ -19,20 +29,23 @@ export default async function ComCasting() {
 
                     
           ))}
-           </section>   
-        <section className="pageMain comCastingPage">
-        <h2>Commercial Casting Projects</h2>
-        {castings.map((project) => ( 
+           </section>  
+
+          <section className="pageMain comCastingPage">
+          <PasswordProtected pw={password}>
+          <h2>Commercial Casting Projects</h2>
+          {castings.map((project) => ( 
           <span key={uuidv4()}>
-              <Link href={`/commercial/${project.slug}`} >
-              {project.title}
-              </Link> /</span>
-              
-
-            ))}
-
+            <Link href={`/commercial/${project.slug}`} >
+            {project.title}
+            </Link> /</span>
             
-        </section>
+
+          ))}
+           </PasswordProtected>
+          </section>
+        
+
       </>
     
   )

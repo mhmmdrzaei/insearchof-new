@@ -71,9 +71,16 @@ export default {
                   title: 'Caption'
                 },
                 {
-                  name: 'attribution',
-                  type: 'string',
-                  title: 'Attribution'
+                  name: 'width',
+                  type: 'number',
+                  title: 'Video Width',
+                  options: {
+                    list: [
+                      {value: 25, title: '25%'},
+                      {value: 50, title: '50%'},
+                      {value: 75, title: '75%'}
+                    ],
+                  },
                 }
               ]
             }

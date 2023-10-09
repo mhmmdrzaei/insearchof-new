@@ -36,6 +36,11 @@ export default {
         ]
       },
       {
+        name: 'password',
+        title: 'Commercial Casting Page Passwrod',
+        type: 'string'
+      },
+      {
         name: 'page_seo',
         type: 'seo',
         title: 'SEO Tags'

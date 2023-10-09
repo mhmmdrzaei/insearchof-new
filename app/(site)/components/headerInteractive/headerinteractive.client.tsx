@@ -60,7 +60,7 @@ export default function Menu({ social, mission, pressContent, title, description
                 Mission
             </button>
             {social.map((s) => (
-                <Link href={s.social_link} key={s._key}>{s.social_name}</Link>
+                <Link href={s.social_link} key={s._key} target='_blank'>{s.social_name}</Link>
             ))}
 
         </section>

@@ -14,6 +14,7 @@ export async function getsettings(): Promise<Settings[]> {
       `*[_type == "siteSettings"]{
         _id,
        description,
+       password,
        mission,
        title,
        "social": social[]{

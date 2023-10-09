@@ -7,6 +7,7 @@ export type Social = {
 };
 
 export type Settings = {
+  password: string;
   _id: string;
   _createdAt: Date;
   title: string;

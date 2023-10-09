@@ -70,7 +70,7 @@ export default async function Casting({params}:Props) {
             : null}
             {project?.castingVideo_url ?
             <div className="htmlVideoContainer">
-                <video controls>
+                <video controls playsInline controlsList="nodownload">
                 <source src={project.castingVideo_url} type="video/mp4" />
                 Your browser does not support the video tag.
                 </video>
@@ -80,7 +80,7 @@ export default async function Casting({params}:Props) {
             project.casting.map((castItem: {
                 width: string; _type: string, url: string, _key: string, attribution: string, caption: string }) => {
                 return <figure key={uuidv4()} className={getSizeClassName(castItem.width)}>
-                    <Image src={castItem.url} width={900} height={900} className="homeImg" alt={`${castItem.attribution} 
+                    <Image src={castItem.url} width={800} height={700} className="homeImg" alt={`${castItem.attribution} 
                 `} loading="lazy" />
                 </figure>;
 
