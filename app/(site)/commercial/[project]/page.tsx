@@ -31,7 +31,7 @@ export default async function Casting({params}:Props) {
     return (
         <>
         <section className="pageSide">
-        <section className='headingInfo' key={uuidv4()}>
+        <section className='headingInfo comcastHeadingInfo' key={uuidv4()}>
         {settings.map((setting) => ( 
                 
 
