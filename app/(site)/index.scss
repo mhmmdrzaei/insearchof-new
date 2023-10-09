@@ -407,11 +407,11 @@ video {
     padding: 10px;
     h2 {
         // text-align: center;
-        @include fontSize(30)
+        @include fontSize(25)
     }
 
     span {
-        @include fontSize(30);
+        @include fontSize(20);
         margin-bottom: 10px;
     }
 }
