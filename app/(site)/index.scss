@@ -555,13 +555,15 @@ video {
         width: 80%;
     }
     .mission,.press  {
-        width: 92%;
+        width: 90%;
         background: #f7f6f0;
         top: 0;
         height: 100vh;
-        left: 20px;
+        left: 0;
+        padding: 10px;
+
         button,.pressInner button {
-            right: 20px;
+            right: 10px;
         }
     }
     .homepage, .castingPage {
