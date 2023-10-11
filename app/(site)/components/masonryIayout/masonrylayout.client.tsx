@@ -25,19 +25,25 @@ const MasonryComponent: React.FC<MasonryProps> = ({ castingItems }) => {
   const masonryContainerRef = useRef(null);
 
   useEffect(() => {
-    const Masonry = require('masonry-layout');
-    const imagesLoaded = require('imagesloaded');
+    // Check viewport width
+    const viewportWidth = window.innerWidth;
 
-    if (masonryContainerRef.current) {
-      imagesLoaded(masonryContainerRef.current, function() {
-        new Masonry(masonryContainerRef.current, {
-          itemSelector: '.grid-item',
-          columnWidth: '.grid-sizer',
-          percentPosition: true,
-        });
-      });
+    // Only proceed if viewport width is greater than 700px
+    if (viewportWidth > 700) {
+        const Masonry = require('masonry-layout');
+        const imagesLoaded = require('imagesloaded');
+
+        if (masonryContainerRef.current) {
+            imagesLoaded(masonryContainerRef.current, function() {
+                new Masonry(masonryContainerRef.current, {
+                    itemSelector: '.grid-item',
+                    columnWidth: '.grid-sizer',
+                    percentPosition: true,
+                });
+            });
+        }
     }
-  }, [castingItems]); 
+}, [castingItems]);
 
   
 

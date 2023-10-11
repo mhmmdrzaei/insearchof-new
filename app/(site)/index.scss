@@ -147,6 +147,9 @@ video {
 }
 
 // page side
+.menuButton, .closeMenuButton {
+    display: none;
+}
 
 .pageSide {
     width: 18%;
@@ -470,3 +473,113 @@ video {
     }
 
 }
+
+@media(max-width: 970px){
+
+    .homepageContainer{
+        .mission {
+            display: none;
+        }
+         
+        .missionButton,.activemission,.mission button {
+            display: block;
+        }
+
+    }
+    .headingInfo {
+        width: 25%;
+    }
+    .homepage,.castingPage{
+        width: calc(74% - 30px);
+    }
+    .press, .mission {
+        left: calc(26% + 30px);
+        width: 24%;
+    }
+ }
+ @media(max-width: 700px){
+    body{
+        padding: 20px 2.5%;
+    }
+    .menuButton {
+        display: block;
+    }
+
+    .menuButton, .closeMenuButton {
+        position: fixed;
+        top: 36px;
+    }
+    .pageSide {
+        width: 0;
+    }
+    .headingInfo {
+        z-index: 2;
+        width: 0;
+        padding: 0;
+        border: none;
+        .pageTitle {
+            width: 100%;
+            position: fixed;
+            z-index: 3;
+            top: 10px;
+            h1 {
+                margin: 0;
+            }
+        }
+    }
+    .headingDesc,.headingMenu,.castingText {
+        display: none;
+    }
+    .mobileActive  {
+        display: block;
+    }
+    .menuButtonActive {
+        content: '← CLOSE';
+    }
+    .headingInfoActive {
+        width: 95%;
+        background: #f7f6f0;
+        top: 0;
+        z-index: 2;
+        height: 100vh;
+        padding-top: 10px;
+        .menuButton {
+            display: none;
+
+        }
+        .closeMenuButton {
+            display: block;
+        }
+    }
+    .headingDesc {
+        width: 80%;
+    }
+    .mission,.press  {
+        width: 92%;
+        background: #f7f6f0;
+        top: 0;
+        height: 100vh;
+        left: 20px;
+        button,.pressInner button {
+            right: 20px;
+        }
+    }
+    .homepage, .castingPage {
+        width: 100%;
+    }
+    .comCastingPage {
+        h2, span {
+            font-size: 1.5rem;
+        }
+    }
+ }
+ @media(max-width: 600px){
+    .homepage {
+        grid-template-columns: 100%;
+    }
+    .grid-sizer, .grid-item,.fiftyWidth, .seventyfiveWidth {
+        width: 100%;
+    }
+ }
+
+

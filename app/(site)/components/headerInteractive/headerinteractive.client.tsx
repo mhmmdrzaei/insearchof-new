@@ -19,6 +19,7 @@ type MenuProps = {
 
 export default function Menu({ social, mission, pressContent, title, description }: MenuProps) {
     const [activeMission, setActiveMission] = useState(false);
+    const [activeMenu, setActiveMenu] = useState(false);
     const [activePress, setActivePress] = useState(false);
     const handlePressClick = () => {
         if (activeMission) {
@@ -34,18 +35,32 @@ export default function Menu({ social, mission, pressContent, title, description
         setActiveMission(prevState => !prevState);
     };
 
+    // New function to explicitly open the menu
+const openMenu = () => {
+    setActiveMenu(true);
+};
+
+// New function to explicitly close the menu
+const closeMenu = () => {
+    setActiveMenu(false);
+};
+
     return (
         <>
-        <section className="headingInfo">
+        <section className={`headingInfo ${activeMenu ? 'headingInfoActive' : ''}`}>
         <section className='headingDetails'>
-                        <Link href={"/"}>
+                        <Link href={"/"} className='pageTitle'>
                             <h1>{title}</h1>
                         </Link>
-                        <section className='headingDesc'>
+                        <button className={`menuButton ${activeMenu ? 'menuButtonActive' : ''}`}  onClick={openMenu}>MENU</button>
+
+                        <button className='closeMenuButton' onClick={closeMenu}>← CLOSE</button>
+
+                        <section className={`headingDesc ${activeMenu ? 'mobileActive' : ''}`} >
                             <PortableText value={description} />
                         </section>
         </section>
-        <section className='headingMenu'>
+        <section className={`headingMenu ${activeMenu ? 'mobileActive' : ''}`} >
         <Link href={"/casting"}>
                 Casting
             </Link>
