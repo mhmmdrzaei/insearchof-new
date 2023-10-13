@@ -155,6 +155,15 @@ video {
     width: 18%;
     position: relative;
 }
+.pageSideCom {
+    width: 18%;
+    .comcastHeadingInfo {
+        padding-right: 10px;
+    border-right: 1px solid #dadbdd;
+    }
+}
+
+
 .mission {
     display: none;
     z-index: 2;
@@ -397,6 +406,9 @@ video {
   
 
 // com casting 
+.comCastBack {
+    display: none;
+}
 .ComCastingHead {
     width: 1000%;
 }
@@ -486,10 +498,11 @@ video {
         }
 
     }
-    .headingInfo {
+    .headingInfo,.pageSideCom {
         width: 25%;
     }
-    .homepage,.castingPage{
+
+    .homepage,.castingPage, .comCastingProj{
         width: calc(74% - 30px);
     }
     .press, .mission {
@@ -573,6 +586,29 @@ video {
     .comCastingPage {
         h2, span {
             font-size: 1.5rem;
+        }
+    }
+    .comCastBack {
+        display: block;
+    }
+    .pageSideCom {
+        width: 100%;
+        .comcastHeadingInfo {
+            border: none;
+        }
+        .allProjectsList {
+            display: none;
+            a {
+                display: initial;
+                margin-right: 10px;
+            }
+
+        } 
+    }
+    .comCastingProj {
+        width: 100%;
+        .fiftyWidth {
+            width: 100%;
         }
     }
  }

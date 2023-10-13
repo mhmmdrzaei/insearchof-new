@@ -30,8 +30,8 @@ export default async function Casting({params}:Props) {
     
     return (
         <>
-        <section className="pageSide">
-        <section className='headingInfo comcastHeadingInfo' key={uuidv4()}>
+        <section className="pageSideCom">
+        <section className='comcastHeadingInfo' key={uuidv4()}>
         {settings.map((setting) => ( 
                 
 
@@ -41,6 +41,9 @@ export default async function Casting({params}:Props) {
 
                       
           ))}
+            <Link className="comCastBack" href={"/commercial"} key={uuidv4()} >
+            <h2>← Commercial Casting Projects</h2>
+            </Link>
 
             <div className="allProjectsList">
                 <h2>Commercial Casting Projects</h2>

@@ -17,6 +17,7 @@ type MenuProps = {
     description: PortableTextBlock[] // For the rendered Press component
 };
 
+
 export default function Menu({ social, mission, pressContent, title, description }: MenuProps) {
     const [activeMission, setActiveMission] = useState(false);
     const [activeMenu, setActiveMenu] = useState(false);

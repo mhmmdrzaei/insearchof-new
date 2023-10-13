@@ -1,8 +1,6 @@
 
 "use client"
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { PortableText } from "@portabletext/react";
 import Press from '../press/press.component';
 import { v4 as uuidv4 } from 'uuid';
 import { PortableTextBlock } from "sanity"
@@ -27,8 +25,6 @@ type HeaderProps = {
 
 
 export default function Header({ set }: HeaderProps) {
-    const [activeMission, setActiveMission] = useState(false);
-    const [activePress, setActivePress] = useState(false);
 
     return (
         <>
