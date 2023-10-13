@@ -55,11 +55,12 @@ body {
     font-family: akkuratleicht,
     sans-serif;
   }
-  @include fontSize(8);
+  @include fontSize(9);
   a, button {
     font-family: akkuratnormal, sans-serif;
     text-decoration: none;
     font-weight: 500;
+    @include fontSize(9);
     color: black;
     word-wrap: break-word;
 
@@ -577,7 +578,7 @@ video {
         padding: 10px;
 
         button,.pressInner button {
-            right: 10px;
+            right: 25px;
         }
     }
     .homepage, .castingPage {
