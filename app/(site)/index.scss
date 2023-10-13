@@ -55,12 +55,12 @@ body {
     font-family: akkuratleicht,
     sans-serif;
   }
-  @include fontSize(9);
+  @include fontSize(8);
   a, button {
     font-family: akkuratnormal, sans-serif;
     text-decoration: none;
     font-weight: 500;
-    @include fontSize(9);
+    @include fontSize(8);
     color: black;
     word-wrap: break-word;
 
@@ -512,16 +512,28 @@ video {
     }
  }
  @media(max-width: 700px){
+
     body{
         padding: 20px 2.5%;
+        p, span, a, button {
+            @include fontSize(10);
+        }
+        h1, h2 {
+            @include fontSize(15);
+        }
     }
     .menuButton {
         display: block;
+        top: 36px;
+    }
+    .closeMenuButton {
+        top: 15px;
+        right: 30px;
     }
 
     .menuButton, .closeMenuButton {
         position: fixed;
-        top: 36px;
+        
     }
     .pageSide {
         width: 0;
@@ -578,7 +590,7 @@ video {
         padding: 10px;
 
         button,.pressInner button {
-            right: 25px;
+            right: 30px;
         }
     }
     .homepage, .castingPage {
