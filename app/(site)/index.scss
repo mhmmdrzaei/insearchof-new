@@ -426,7 +426,7 @@ video {
         @include fontSize(25)
     }
 
-    span {
+    span, span a {
         @include fontSize(20);
         margin-bottom: 10px;
     }

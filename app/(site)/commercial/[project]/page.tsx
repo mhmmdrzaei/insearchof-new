@@ -42,7 +42,7 @@ export default async function Casting({params}:Props) {
                       
           ))}
             <Link className="comCastBack" href={"/commercial"} key={uuidv4()} >
-            <h2>← Commercial Casting Projects</h2>
+            ← Commercial Casting Projects
             </Link>
 
             <div className="allProjectsList">

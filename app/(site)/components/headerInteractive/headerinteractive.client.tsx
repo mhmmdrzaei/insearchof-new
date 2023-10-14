@@ -73,7 +73,7 @@ const closeMenu = () => {
             <button className='missionButton'
                 onClick={handleMissionClick}
             >
-                Mission
+                About
             </button>
             {social.map((s) => (
                 <Link href={s.social_link} key={s._key} target='_blank'>{s.social_name}</Link>
@@ -87,7 +87,7 @@ const closeMenu = () => {
                 className={`mission ${activeMission ? 'activemission' : ''}`}
             >
                 <section className="missionInner">
-                <h1>Mission</h1>
+                <h1>About</h1>
                 <button  onClick={handleMissionClick}>← CLOSE</button>
                 <PortableText value={mission} />
 
