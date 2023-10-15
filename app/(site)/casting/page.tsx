@@ -27,9 +27,11 @@ return (
                 </section>
                 <section className="pageMain castingPage" key={uuidv4()}>
                 <div className="grid">
-		        <div className="grid-sizer"></div>
                 <MasonryComponent castingItems={castingArray} />
                 </div>
+                <div className="grid-item  item--is-invisible grid-size"></div>
+                <div className="grid-item item--is-invisible grid--gutter"></div>
+
                 </section>
    
             </>
