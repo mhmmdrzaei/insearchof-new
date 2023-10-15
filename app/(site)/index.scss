@@ -55,12 +55,12 @@ body {
     font-family: akkuratleicht,
     sans-serif;
   }
-  @include fontSize(8);
+  @include fontSize(7.5);
   a, button {
     font-family: akkuratnormal, sans-serif;
     text-decoration: none;
     font-weight: 500;
-    @include fontSize(8);
+    @include fontSize(7.5);
     color: black;
     word-wrap: break-word;
 
@@ -79,11 +79,11 @@ p strong  {
     font-weight: 700;
 }
 h1 {
-    @include fontSize(11);
+    @include fontSize(10.5);
     margin-top: 5px;
 }
 h2 {
-    @include fontSize(9);
+    @include fontSize(8.5);
 }
 
 
