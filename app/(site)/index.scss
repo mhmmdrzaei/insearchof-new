@@ -189,10 +189,20 @@ video {
         height: calc(100vh - 30px);
         position: relative;
         top: 10px;
+        h1 {
+            position: absolute;
+            top: 0;
+        }
+        .missionText {
+            padding-top: 62px;
+            width: 90%;
+            // margin-left: auto;
+            p:nth-child(1) {
+                max-width: 220px;
+            }
+        }
     }
-    h1 {
-        margin-bottom: 50px;
-    }
+
     button {
         position: absolute;
         top: 0.1rem;
@@ -291,6 +301,9 @@ video {
 .homepageContainer {
     .mission {
         display: block;
+        .missionInner h1 {
+            display: none;
+        }
         button {
             display: none;
         }
@@ -532,6 +545,14 @@ video {
  }
  @media(max-width: 700px){
 
+    .homepageContainer {
+        .mission {
+            .missionInner h1 {
+                display: block;
+            }
+
+        }
+    }
     body{
         padding: 20px 5%;
         p, span, a, button {

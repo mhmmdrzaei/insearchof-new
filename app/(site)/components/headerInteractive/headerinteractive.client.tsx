@@ -65,11 +65,11 @@ const closeMenu = () => {
         <Link href={"/casting"}>
                 Casting
             </Link>
-            <button className='pressButton'
+            {/* <button className='pressButton'
                onClick={handlePressClick}
             >
                 Press
-            </button>
+            </button> */}
             <button className='missionButton'
                 onClick={handleMissionClick}
             >
@@ -89,12 +89,16 @@ const closeMenu = () => {
                 <section className="missionInner">
                 <h1>About</h1>
                 <button  onClick={handleMissionClick}>← CLOSE</button>
+
+                <section className="missionText">
                 <PortableText value={mission} />
+                </section>
+                
 
                 </section>
 
             </section>
-            <section 
+            {/* <section 
                 className={`press ${activePress ? 'activepress' : ''}`}
             >
                 <section className="pressInner">
@@ -103,7 +107,7 @@ const closeMenu = () => {
 
                 </section>
 
-            </section>
+            </section> */}
          </>
         
     );
