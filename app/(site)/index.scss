@@ -195,7 +195,9 @@ video {
         }
         .missionText {
             padding-top: 62px;
-            width: 90%;
+            width: 98%;
+            text-align: justify;
+            // margin: 0 auto;
             // margin-left: auto;
             p:nth-child(1) {
                 max-width: 220px;
@@ -637,6 +639,7 @@ video {
         .missionInner {
             border: none;
             width: 90%;
+            
             padding: 0 5%;
         }
         .pressInner {
