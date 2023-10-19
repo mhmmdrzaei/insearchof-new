@@ -196,7 +196,7 @@ video {
         .missionText {
             padding-top: 62px;
             width: 98%;
-            text-align: justify;
+            // text-align: justify;
             // margin: 0 auto;
             // margin-left: auto;
             p:nth-child(1) {
@@ -275,8 +275,9 @@ video {
     // counter-reset: itemCounter;
     a, button {
         display: block;
-        margin: 3px 0;
+        margin: 5px 0;
         font-weight: 300;
+        text-transform: uppercase;
         // text-shadow: 0px 0px 0.5px;
     }
 
