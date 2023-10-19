@@ -55,7 +55,7 @@ const closeMenu = () => {
                         </Link>
                         <button className={`menuButton ${activeMenu ? 'menuButtonActive' : ''}`}  onClick={openMenu}>MENU</button>
 
-                        <button className='closeMenuButton' onClick={closeMenu}>← CLOSE</button>
+                        <button className='closeMenuButton' onClick={closeMenu}>&#10005;</button>
 
                         <section className={`headingDesc ${activeMenu ? 'mobileActive' : ''}`} >
                             <PortableText value={description} />
@@ -88,7 +88,7 @@ const closeMenu = () => {
             >
                 <section className="missionInner">
                 {/* <h1>About</h1> */}
-                <button  onClick={handleMissionClick}>← CLOSE</button>
+                <button  onClick={handleMissionClick}>&#10005;</button>
 
                 <section className="missionText">
                 <PortableText value={mission} />
@@ -102,7 +102,7 @@ const closeMenu = () => {
                 className={`press ${activePress ? 'activepress' : ''}`}
             >
                 <section className="pressInner">
-                <button onClick={handlePressClick} >← CLOSE</button>
+                <button onClick={handlePressClick} >&#10005;</button>
                 {pressContent}
 
                 </section>

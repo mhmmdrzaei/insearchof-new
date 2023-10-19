@@ -211,6 +211,7 @@ video {
         position: absolute;
         top: 0.1rem;
         right: 20px;
+        @include fontSize(15);
         &:hover {
             text-decoration: none;
         }
@@ -241,6 +242,7 @@ video {
             position: absolute;
             top: 0.5rem;
             right: 20px;
+            @include fontSize(15);
             &:hover {
                 text-decoration: none;
             }
@@ -568,7 +570,7 @@ video {
     body{
         padding: 20px 5%;
         p, span, a, button {
-            @include fontSize(11);
+            @include fontSize(10);
         }
         h1, h2 {
             @include fontSize(16);
@@ -581,6 +583,7 @@ video {
     .closeMenuButton {
         top: 22px;
         right: 20px;
+        @include fontSize(15);
     }
 
     .menuButton, .closeMenuButton {
