@@ -1,7 +1,9 @@
 @font-face {
     font-family: akkuratnormal;
-    src: url('sources/fonts/akkurat-normal-webfont.woff2') format('woff2'),
-         url('sources/fonts/akkurat-normal-webfont.woff') format('woff');
+    src: local('akkuratnormal'), url(sources/fonts/akkurat-normal-webfont.woff) 
+         format('woff'),
+         local('akkuratnormal'), url(sources/fonts/akkurat-normal-webfont.woff2) format('woff2');
+
     font-weight: normal;
     font-style: normal;
 
@@ -550,9 +552,16 @@ video {
 
     .homepageContainer {
         .mission {
-            .missionInner h1 {
-                display: block;
-            }
+            .missionInner {
+                h1 {
+                    display: block;
+                }
+                .missionText {
+                    p:nth-child(1) {
+                        max-width: 300px;
+                    }
+                }
+            } 
 
         }
     }
@@ -624,6 +633,7 @@ video {
     }
     .headingDesc {
         width: 80%;
+        max-width: 100%;
     }
     .mission,.press  {
         width: calc(100% - 20px);
