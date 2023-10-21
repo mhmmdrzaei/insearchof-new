@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import './index.scss'
 import { getsettings } from '@/sanity/sanity.utils'
 
+
 export const dynamic = 'force-dynamic'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -23,12 +24,6 @@ export const metadata = {
         url: 'https://cdn.sanity.io/images/5zyxoqnf/production/031e1b5398d0b78c3c1ba1c3e2bc240227338de3-1200x626.png',
         width: 1200,
         height: 626,
-      },
-      {
-        url: 'https://cdn.sanity.io/images/5zyxoqnf/production/e35f371f74fb1f313de38168ebe63bf88854f5bb-835x626.png',
-        width: 835,
-        height: 626,
-        alt: 'Insearchof Logo',
       },
     ],
     locale: 'en_US',
