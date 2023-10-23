@@ -13,10 +13,10 @@ const settings = getsettings();
 
 export const metadata = {
   title: 'In Search Of',
-  description: 'In Search Of is a full service casting and management agency based in New York, Los Angeles + Toronto. The agency acts as a social archive, sharing stories of the often overlooked, documenting cultural moments, and observing the relationships between an individual and a shared collective experience. ',
+  description: 'In Search Of is a full service casting and management agency based in New York, Los Angeles + Toronto. The agency acts as a social archive, sharing stories of the often overlooked, documenting cultural moments, and observing the relationships between an individual and a shared collective experience.',
   openGraph: {
     title: 'In Search Of',
-    description: 'In Search Of is a full service casting and management agency based in New York, Los Angeles + Toronto. The agency acts as a social archive, sharing stories of the often overlooked, documenting cultural moments, and observing the relationships between an individual and a shared collective experience. ',
+    description: 'In Search Of is a full service casting and management agency based in New York, Los Angeles + Toronto. The agency acts as a social archive, sharing stories of the often overlooked, documenting cultural moments, and observing the relationships between an individual and a shared collective experience.',
     url: 'https://insearchof.agency',
     siteName: 'Next.js',
     images: [
