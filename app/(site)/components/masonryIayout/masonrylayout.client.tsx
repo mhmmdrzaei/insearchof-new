@@ -70,7 +70,7 @@ const MasonryComponent: React.FC<MasonryProps> = ({ castingItems }) => {
                         return (
                             <figure key={uuidv4()} className={`castingImg ${getSizeClassName(items.width)} grid-item `}>
                                 <Image src={items.url} width={700} height={700} className="homeImg" alt={`${items.attribution} 
-                                `} loading="lazy" />
+                                `} loading="eager" quality={60} />
                                 {items?.caption ? <span>{items.caption}</span> : null}
                                 
                             </figure>

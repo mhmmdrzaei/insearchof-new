@@ -19,7 +19,7 @@ export default async function Home() {
 
       {home.map((homePage)=> {
         return homePage.images_url.map((homeImage: { homeImgUrl: string; })=>{
-          return <Image src={homeImage.homeImgUrl} width={700} height={700} key={uuidv4()} className="homeImg" alt={''} />
+          return <Image src={homeImage.homeImgUrl} width={400} height={400} key={uuidv4()} className="homeImg" loading="eager"  alt={'image taken by In Search Of Agency with models on a white backdrop'} />
           
         })
     })}
