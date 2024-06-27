@@ -1,13 +1,12 @@
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+
 import './index.scss'
 import { getsettings } from '@/sanity/sanity.utils'
 
 
 export const dynamic = 'force-dynamic'
 
-const inter = Inter({ subsets: ['latin'] })
 const settings = getsettings();
 
 
@@ -40,7 +39,7 @@ export default  function  RootLayout({
 
   return (
     <html lang="en">
-        <body className={inter.className}>
+        <body >
         <main>{children}</main>
         </body>
       
