@@ -28,6 +28,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-lite-youtube-embed": "^2.3.52",
+    "react-masonry-css": "^1.0.16",
     "sanity": "^3.16.1",
     "sanity-plugin-media": "^2.2.2",
     "sass": "^1.68.0",

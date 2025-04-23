@@ -151,7 +151,7 @@ video {
     max-height: 680px;
     max-width: 900px;
     width: 100%;
-    margin: 10px auto;
+    // margin: 10px auto;
 }
 
 // page side
@@ -379,17 +379,26 @@ video {
     margin: 0 auto;
     opacity: 0;
     animation: fadeIn 2s 1s forwards;
-
+display: flex;
+flex-flow: row wrap;
+gap: 10px;
   
   }
   
   .grid-item {
-    height: auto;
-    width: 24%; 
-    margin-bottom: 10px;
+    // grid-column: span 1; /* Take 1 column */
+    // margin-bottom: 10px;
+    position: relative;
+    width: calc(25% - 10px);
+    flex-basis: calc(33.333% - 16px); /* This makes the items take up 33.33% of the container width minus the gap */
+    margin-bottom: 16px; /* Space between items in the same column */
+    display: flex;
+    flex-direction: column;
     
     img {
-        display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
     }
   }
   .grid-sizer {
@@ -400,11 +409,16 @@ video {
   }
 
   .fiftyWidth {
-      width: 49%;
+    // grid-column: span 2; /* Take 1 column */
+    width: calc(50% - 10px);
+
   }
   .seventyfiveWidth {
-      width: 74%;
+    // grid-column: span 3; /* Take 1 column */
+    width: calc(75% - 10px);
   }
+
+  
 
 // .casting-column {
 //     column-count: 4;
