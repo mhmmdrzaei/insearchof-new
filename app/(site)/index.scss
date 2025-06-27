@@ -328,9 +328,7 @@ video {
     }
     .homepageSide {
         @extend .flex;
-        .headingInfo{
-            
-        }
+
     }
 }
 // home page 
@@ -405,7 +403,7 @@ gap: 10px;
     // margin-bottom: 10px;
     position: relative;
     width: calc(25% - 10px);
-    flex-basis: calc(33.333% - 16px); /* This makes the items take up 33.33% of the container width minus the gap */
+    // flex-basis: calc(33.333% - 16px); /* This makes the items take up 33.33% of the container width minus the gap */
     margin-bottom: 16px; /* Space between items in the same column */
     display: flex;
     flex-direction: column;
@@ -655,6 +653,7 @@ gap: 10px;
         width: 0;
         padding: 0;
         border: none;
+        max-width: none;
         .pageTitle {
             width: fit-content;
             position: fixed;
