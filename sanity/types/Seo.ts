@@ -7,10 +7,4 @@ export interface PageSeo {
       url?: string
     }
   }
-  seo_image_twitter?: {
-    asset: {
-      _ref: string
-      url?: string
-    }
-  }
 }

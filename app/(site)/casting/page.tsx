@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const pageSeo = castingPage.page_seo
   const siteSeo = settings.page_seo
 
-  const baseTitle = pageSeo?.title ?? siteSeo?.title ?? settings.title
+  const baseTitle = pageSeo?.title ?? castingPage?.title ?? settings.title
   const title = baseTitle.includes(settings.title)
     ? baseTitle
     : `${baseTitle} | ${settings.title}`
