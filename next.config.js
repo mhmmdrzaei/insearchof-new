@@ -7,7 +7,9 @@ const nextConfig = {
           hostname: 'cdn.sanity.io',
           port: '',
         },
+        
       ],
+      minimumCacheTTL: 60 * 60 * 24 * 30,
     },
   }
 

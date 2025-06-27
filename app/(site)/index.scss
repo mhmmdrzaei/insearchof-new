@@ -105,12 +105,14 @@ body {
 }
 main {
     // min-height: calc(100vh - 20px)
+    max-width: 1800px;
+    justify-content: center;
+    @extend .flex;
+    margin: 0 auto;
 }
 
-main, .homepageContainer {
+.homepageContainer {
     @extend .flex;
-    max-width: 1800px;
-    margin: 0 auto;
 }
 button {
     background: none;
@@ -271,7 +273,13 @@ video {
     height: calc(100vh - 20px);
     padding-right: 20px;
     border-right: 1px solid #dadbdd;
-    width: 16%;
+    width: 17%;
+    max-width: 280px;
+    .pageTitle {
+        &:hover {
+            text-decoration: none;
+        }
+    }
     // margin-right: 20px;
 
 }
@@ -336,9 +344,15 @@ video {
 }
 
 //Casting page
+.castingWrapper {
+   width: calc(82% - 15px);
+   position: relative;
+   margin-left: 15px;
+
+}
 
 .castingPage {
-    width: calc(82% - 30px);
+    width: 100%;
  
     figure img {
         width: 100%;
@@ -366,6 +380,7 @@ video {
     position: fixed;
     bottom: 2px;
     width: 18%;
+    margin-left: -18%;
 
 }
 // masonry 
@@ -478,7 +493,7 @@ gap: 10px;
         @include fontSize(25)
     }
 
-    span, span a {
+    span, a {
         @include fontSize(20);
         margin-bottom: 10px;
     }
@@ -501,7 +516,8 @@ gap: 10px;
     }
 }
 .comCastingProj {
-    width: 80%;
+    width: calc(82% - 15px);
+    margin-left: 15px;
 }
 .comCastingContent {
     @extend .flex;
@@ -556,15 +572,39 @@ gap: 10px;
         width: 25%;
     }
 
-    .homepage,.castingPage, .comCastingProj{
+    .homepage{
         width: calc(72% - 40px);
+    }
+    .comCastingProj {
+        width: calc(75% - 15px);
+    
     }
     .press, .mission {
         left: calc(26% + 50px);
         width: 24%;
     }
+    .castingWrapper {
+        width: calc(72% - 40px);
+        .castingText {
+            margin-left: -25%;
+        }
+    }
+    .pageSide {
+        width: 28%;
+    }
  }
+
  @media(max-width: 700px){
+    main {
+        justify-content: space-between;
+    }
+     .castingWrapper {
+        width: 100%;
+        margin-left: 0;
+        .castingText {
+            margin-left: 0%;
+        }
+    }
 
     .homepageContainer {
         .mission {
@@ -598,6 +638,9 @@ gap: 10px;
         top: 22px;
         right: 20px;
         @include fontSize(15);
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     .menuButton, .closeMenuButton {
@@ -682,7 +725,7 @@ gap: 10px;
         width: 100%;
     }
     .comCastingPage {
-        h2, span {
+        h2, span, a {
             font-size: 1.5rem;
         }
     }
@@ -705,6 +748,7 @@ gap: 10px;
     }
     .comCastingProj {
         width: 100%;
+        margin-left:0 ;
         .fiftyWidth {
             width: 100%;
         }
@@ -727,6 +771,16 @@ gap: 10px;
     }
     .grid-sizer, .grid-item,.fiftyWidth, .seventyfiveWidth {
         width: 100%;
+    }
+     .comCastingPage {
+         a {
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        span {
+            display: none;
+        }
     }
  }
 

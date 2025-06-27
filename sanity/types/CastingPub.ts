@@ -1,4 +1,5 @@
 import { PortableTextBlock } from "sanity"
+import { PageSeo } from "./Seo";
 
 
 
@@ -14,5 +15,6 @@ export type CastingPub = {
   _id: string,
   title: string,
   castImg: { url: string;_key: string; _type: string; attribution: string; caption: string;}
-  casting_contact: PortableTextBlock[]
+  casting_contact: PortableTextBlock[],
+page_seo: PageSeo       
 };

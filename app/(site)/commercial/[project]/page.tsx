@@ -1,10 +1,48 @@
 import { getComCasting, getComCastingsAll, getsettings } from "@/sanity/sanity.utils";
 import { PortableText } from "@portabletext/react";
-export const dynamic = 'force-dynamic'
 import Link from "next/link";
 import { v4 as uuidv4 } from 'uuid';
 import Image from "next/image";
 import {IMAGE_SIZE_COM} from "@/app/(site)/components/stylingComponent/stylingComponent.component"
+import { Metadata } from "next";
+
+
+export async function generateMetadata({params}:Props): Promise<Metadata> {
+    const slug = params.project;
+  const settingsArr = await getsettings();
+  const project = await getComCasting(slug)
+  const settings = settingsArr[0];
+  if (!settings) throw new Error("No site settings found");
+
+  // Use site-level SEO only, since this listing has no own page_seo
+  const siteSeo = settings.page_seo;
+  const baseTitle = project.title;
+  const title = baseTitle.includes(settings.title)
+    ? baseTitle
+    : `${baseTitle} | ${settings.title}`;
+
+  const description = siteSeo?.description ?? "";
+  const seoImageUrl = siteSeo?.seo_image?.asset?.url ?? "";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      siteName: settings.title,
+      locale: "en_CA",
+      type: "website",
+      images: [{ url: seoImageUrl, width: 1200, height: 628 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [seoImageUrl],
+    },
+  };
+}
 
 
 type Props = {

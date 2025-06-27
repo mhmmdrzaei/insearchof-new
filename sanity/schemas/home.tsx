@@ -25,6 +25,11 @@ export default {
               }
             }
         ]
+      },
+       {
+        name: 'page_seo',
+        type: 'seo',
+        title: 'SEO Tags'
       }
 
       

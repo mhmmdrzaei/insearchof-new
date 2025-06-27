@@ -15,7 +15,7 @@ const config =  defineConfig({
       useCdn: false,
       apiVersion: '2023-08-31',
       basePath:'/admin',
-      plugins: [deskTool({structure: myStructure,}),media()],
+      plugins: [deskTool({structure: myStructure,}),media(),visionTool()],
       schema: {
         types: schemaTypes,
       },

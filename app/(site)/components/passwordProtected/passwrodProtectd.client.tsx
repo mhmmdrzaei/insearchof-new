@@ -4,7 +4,7 @@ import Cookie from 'js-cookie';
 
 type PasswordProtectedProps = {
   children: ReactNode;
-  pw: string;
+  pw: string | undefined;
 };
 
 const PasswordProtected: React.FC<PasswordProtectedProps> = ({ children, pw }) => {
