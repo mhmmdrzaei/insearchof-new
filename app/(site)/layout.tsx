@@ -3,6 +3,7 @@
 
 import './index.scss'
 import { getsettings } from '@/sanity/sanity.utils'
+export const dynamic = 'force-dynamic'
 
 
 const settings = getsettings();
@@ -24,7 +25,7 @@ export default  function  RootLayout({
     </html>
   )
 
-  
+
 }
 
 
