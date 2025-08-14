@@ -37,9 +37,7 @@ export async function getsettings(): Promise<SiteSettings[]> {
        
        
  }`,
-    {
-      cache: "no-store",
-    }
+
   );
 }
 
@@ -52,9 +50,7 @@ export async function getComCastingsAll(): Promise<Casting[]> {
         
         
     }`,
-    {
-      cache: "no-store",
-    }
+
   );
 }
 export async function getComCasting(slug: string): Promise<Casting> {
@@ -74,7 +70,7 @@ export async function getComCasting(slug: string): Promise<Casting> {
         
         
     }`,
-    { slug, cache: "no-store" }
+    { slug }
   );
 }
 
@@ -134,9 +130,7 @@ export async function getCasting(): Promise<CastingPub[]> {
        }
             
       }`,
-    {
-      cache: "no-store",
-    }
+
   );
 }
 
@@ -154,8 +148,6 @@ export async function getPress(): Promise<Press[]> {
           }
           
     }`,
-    {
-      cache: "no-store",
-    }
+
   );
 }
