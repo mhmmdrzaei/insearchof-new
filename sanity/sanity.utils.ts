@@ -37,7 +37,7 @@ export async function getsettings(): Promise<SiteSettings[]> {
        
        
  }`,
-
+{ cache: "force-cache" }
   );
 }
 
@@ -50,6 +50,7 @@ export async function getComCastingsAll(): Promise<Casting[]> {
         
         
     }`,
+    { cache: "force-cache" }
 
   );
 }
@@ -93,7 +94,8 @@ export async function getHome(): Promise<Home[]> {
         seo_image{ asset->{url} },
         seo_image_twitter{ asset->{url} }
       }
-    }`
+    }`,
+    { cache: "force-cache" }
   )
 }
 
@@ -130,6 +132,7 @@ export async function getCasting(): Promise<CastingPub[]> {
        }
             
       }`,
+      { cache: "force-cache" }
 
   );
 }
@@ -148,6 +151,7 @@ export async function getPress(): Promise<Press[]> {
           }
           
     }`,
+    { cache: "force-cache" }
 
   );
 }
