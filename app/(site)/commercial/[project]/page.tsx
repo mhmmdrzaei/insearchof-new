@@ -122,7 +122,7 @@ export default async function Casting({params}:Props) {
                 width: string; _type: string, url: string, _key: string, attribution: string, caption: string }) => {
                 return <figure key={uuidv4()} className={getSizeClassName(castItem.width)}>
                     <Image src={castItem.url} width={800} height={700} className="homeImg" alt={`${castItem.attribution} 
-                `} loading="lazy" />
+                `} loading="lazy" unoptimized />
                 </figure>;
 
             }) : null}

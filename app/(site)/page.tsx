@@ -89,6 +89,7 @@ export default async function Home() {
             height={600}
             alt={settings.title}
             className="homeImg"
+            unoptimized
           />
         ))}
       </section>
