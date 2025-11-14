@@ -3,6 +3,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import { getHome, getsettings } from '@/sanity/sanity.utils'
 import Header from '@/app/(site)/components/header/header.component'
+import { urlFor } from '../utils/imageBuilder';
+
 
 export async function generateMetadata(): Promise<Metadata> {
   // Step 1: get arrays
@@ -84,7 +86,7 @@ export default async function Home() {
         {homePage.home_images?.map((img) => (
           <Image
             key={img._key}
-            src={img.asset.url!}
+            src={urlFor(img.asset).width(600).quality(70).auto('format').url()}
             width={600}
             height={600}
             alt={settings.title}

@@ -5,6 +5,17 @@ import { v4 as uuidv4 } from 'uuid';
 import Image from "next/image";
 import {IMAGE_SIZE_COM} from "@/app/(site)/components/stylingComponent/stylingComponent.component"
 import { Metadata } from "next";
+import { urlFor } from "@/app/utils/imageBuilder";
+
+interface CastItem {
+  width?: string;
+  _type: string;
+  _key: string;
+  asset: any; // or better, type it like SanityImageSource if you have that
+  attribution?: string;
+  caption?: string;
+}
+
 
 
 export async function generateMetadata({params}:Props): Promise<Metadata> {
@@ -118,10 +129,9 @@ export default async function Casting({params}:Props) {
 
             </div> : null}
             {project?.casting ?
-            project.casting.map((castItem: {
-                width: string; _type: string, url: string, _key: string, attribution: string, caption: string }) => {
+            project.casting.map((castItem: CastItem ) => {
                 return <figure key={uuidv4()} className={getSizeClassName(castItem.width)}>
-                    <Image src={castItem.url} width={800} height={700} className="homeImg" alt={`${castItem.attribution} 
+                    <Image src={urlFor(castItem.asset).width(800).quality(90).auto('format').url()} width={800} height={700} className="homeImg" alt={`${castItem.attribution} 
                 `} loading="lazy" unoptimized />
                 </figure>;
 

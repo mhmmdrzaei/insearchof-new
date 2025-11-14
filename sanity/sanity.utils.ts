@@ -62,7 +62,8 @@ export async function getComCasting(slug: string): Promise<Casting> {
         "slug": slug.current,
         castingdescription,
         "casting": com_casting_img[]{
-          "url":asset->url,
+          asset->{_id,
+         _ref,},
           alt,
           width
         },
@@ -84,7 +85,9 @@ export async function getHome(): Promise<Home[]> {
       home_images[]{            // ← matches your schema field
         _key,
         asset->{
-          url                     // ← pull in the URL
+         _id,
+         _ref,
+
         }
         // hotspot, crop, etc. if you need them
       },

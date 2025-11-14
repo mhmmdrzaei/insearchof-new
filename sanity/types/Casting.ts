@@ -6,8 +6,9 @@ export type Casting = {
   slug: string,
   castingdescription: PortableTextBlock[],
   casting: {
-    map(arg0: (castItem: { _type: string; url: string; _key: string; attribution: string; caption: string; width: string;}) => import("react").JSX.Element | null): import("react").ReactNode;
+    map(arg0: (castItem: { _type: string; asset: any; _key: string; attribution: string; caption: string; width: string;}) => import("react").JSX.Element | null): import("react").ReactNode;
     url: string,
+    asset: any,
     alt: string,
     width: string
   },

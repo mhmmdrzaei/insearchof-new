@@ -7,6 +7,7 @@ export type CastingPub = {
   casting: Array<{
     _type: string;
     url: string;
+    asset: any,
     _key: string;
     attribution: string;
     caption: string;

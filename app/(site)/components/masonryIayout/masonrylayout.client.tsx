@@ -106,7 +106,7 @@ const MasonryComponent: React.FC<MasonryProps> = ({ castingItems }) => {
         height={700}
         className="homeImg"
         alt={items.attribution}
-        sizes="(min-width:1024px) 25vw, (min-width:700px) 50vw, 75vw"
+        sizes="(min-width:700px) 50vw, 75vw"
         quality={60}
         unoptimized
       />
