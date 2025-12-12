@@ -74,7 +74,6 @@ const MasonryComponent: React.FC<MasonryProps> = ({ castingItems }) => {
   const key = uuidv4();
   const sizeClass = getSizeClassName(items.width);
 
-  // 🎞️ Videos (real videos or converted GIFs)
   if (items._type === 'casting_video' || items.url.endsWith('.mp4') || items.url.endsWith('.webm')) {
     return (
       <div key={key} className={`videoCasting ${sizeClass} grid-item`}>
@@ -86,12 +85,10 @@ const MasonryComponent: React.FC<MasonryProps> = ({ castingItems }) => {
       </div>
     );
   }
-
-  // 🌀 GIFs (served as <img>)
   if (items.url.endsWith('.gif')) {
     return (
       <figure key={key} className={`castingImg ${sizeClass} grid-item`}>
-        <img src={items.url} alt={items.attribution} className="homeImg" loading="lazy" />
+        <Image src={items.url} alt={items.attribution} className="homeImg" loading="lazy" unoptimized/>
         {items?.caption && <span>{items.caption}</span>}
       </figure>
     );

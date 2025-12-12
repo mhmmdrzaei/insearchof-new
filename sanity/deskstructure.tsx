@@ -30,7 +30,7 @@ interface Structure {
   documentTypeListItems(): { getId(): string }[];
 }
 
-export const myStructure: (S: StructureBuilder) => ListBuilder = (S) => {
+export const myStructure = (S: StructureBuilder) => {
   return S.list()
     .title('In Search Of')
     .items([

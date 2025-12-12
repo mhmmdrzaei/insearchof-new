@@ -10,35 +10,30 @@ import { Press } from "./types/Press";
 
 export async function getsettings(): Promise<SiteSettings[]> {
   return createClient(clientConfig).fetch(
-    `*[_type == "siteSettings"]{
-        _id,
-       description,
-       password,
-       mission,
-       title,
-       "social": social[]{
-          social_name,
-          social_link,
-          _key
-       },
-       page_seo {
-        title,
-        description,
-        seo_image {
-        asset -> {
-        url
-        }
-        },
-        seo_image_twitter {
-          asset -> {
-          url
-          }
-        },
-       }
-       
-       
- }`,
-{ cache: "force-cache" }
+   `*[_type == "siteSettings"]{
+    _id,
+    description,
+    password,
+    mission,
+    title,
+    "social": social[]{
+      social_name,
+      social_link,
+      _key
+    },
+    page_seo {
+      title,
+      description,
+      seo_image {
+        asset->{ url }
+      },
+      seo_image_twitter {
+        asset->{ url }
+      }
+    }
+  }`,
+  {}, // ← params (empty object)
+  { cache: "force-cache" } // ← options
   );
 }
 
@@ -51,6 +46,7 @@ export async function getComCastingsAll(): Promise<Casting[]> {
         
         
     }`,
+    {},
     { cache: "force-cache" }
 
   );
@@ -99,6 +95,7 @@ export async function getHome(): Promise<Home[]> {
         seo_image_twitter{ asset->{url} }
       }
     }`,
+    {}, // ← params (empty object)
     { cache: "force-cache" }
   )
 }
@@ -136,6 +133,7 @@ export async function getCasting(): Promise<CastingPub[]> {
        }
             
       }`,
+      {} ,
       { cache: "force-cache" }
 
   );
@@ -155,6 +153,7 @@ export async function getPress(): Promise<Press[]> {
           }
           
     }`,
+    {},
     { cache: "force-cache" }
 
   );
