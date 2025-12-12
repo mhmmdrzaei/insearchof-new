@@ -1,5 +1,6 @@
 // sanity.utils
-import { createClient, groq } from "next-sanity";
+import { createClient } from "next-sanity";
+import groq from "groq";
 import clientConfig from "./config/client-config";
 import { SiteSettings } from "./types/Settings";
 import { Casting } from "./types/Casting";
