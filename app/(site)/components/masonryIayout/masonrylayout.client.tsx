@@ -77,7 +77,7 @@ const MasonryComponent: React.FC<MasonryProps> = ({ castingItems }) => {
   if (items._type === 'casting_video' || items.url.endsWith('.mp4') || items.url.endsWith('.webm')) {
     return (
       <div key={key} className={`videoCasting ${sizeClass} grid-item`}>
-        <video ref={el => (videoRefs.current[key] = el)} autoPlay muted playsInline loop>
+        <video ref={el => { videoRefs.current[key] = el; }} autoPlay muted playsInline loop>
           <source src={items.url} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -88,7 +88,10 @@ const MasonryComponent: React.FC<MasonryProps> = ({ castingItems }) => {
   if (items.url.endsWith('.gif')) {
     return (
       <figure key={key} className={`castingImg ${sizeClass} grid-item`}>
-        <Image src={items.url} alt={items.attribution} className="homeImg" loading="lazy" unoptimized/>
+        <Image src={items.url} alt={items.attribution} className="homeImg" loading="lazy" unoptimized
+        width={700}
+        height={700}
+        />
         {items?.caption && <span>{items.caption}</span>}
       </figure>
     );

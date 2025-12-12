@@ -1,4 +1,5 @@
-"use client";
+
+'use client'
 
 import { NextStudio } from "next-sanity/studio";
 
